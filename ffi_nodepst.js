@@ -173,7 +173,7 @@ if (libpst) {
 	var f = new pst_file();
 	var descTree = new pst_desc_tree();
 	var d_ptr = ref.alloc(pstdesctree_Ptr);
-	var item = ref.alloc(pstfile_Ptr);
+	var item = ref.alloc(pstitem_Ptr);
 
 	var ret = libpst.pst_open(f.ref(), file_name, null);
 	if (ret !== -1) {
