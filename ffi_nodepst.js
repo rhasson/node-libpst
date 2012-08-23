@@ -184,7 +184,7 @@ if (libpst) {
 		libpst.pst_load_extended_attributes(f.ref());
 
 		ref.writePointer(d_ptr, 0, f.d_head);
-		item = lib.pst_parse_item(f.ref(), d_ptr.ref(), NULL);
+		item = libpst.pst_parse_item(f.ref(), d_ptr.ref(), NULL);
 	}
 	libpst.pst_close(f.ref());
 }
