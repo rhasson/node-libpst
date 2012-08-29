@@ -1148,7 +1148,7 @@ if (libpst) {
 	var descTree = new pst_desc_tree();
 	var d_ptr = ref.alloc(pstdesctree_Ptr);
 	var item = ref.alloc(pstitem_Ptr);
-	var temp = ref.alloc(pststring_Ptr);
+	var subject = ref.alloc(pststring_Ptr);
 
 	var ret = libpst.pst_open(f.ref(), file_name, null);
 	if (ret !== -1) {
@@ -1157,18 +1157,18 @@ if (libpst) {
 		libpst.pst_load_index(f.ref());
 		console.log('Loading extended attributes...');
 		libpst.pst_load_extended_attributes(f.ref());
-
-		var t = ref.readPointer(f.d_head, 0);
+/*		
+		var t = ref.readPointer(f.d_head, 0);  //seems to be returning a null pointer
 		console.log(t);
-		
-/*		ref.writePointer(d_ptr, 0, f.d_head);
+*/
+		ref.writePointer(d_ptr, 0, f.d_head);
 		console.log('parsing first item...');
 		item = libpst.pst_parse_item(f.ref(), d_ptr.ref(), null);
 		
-		ref.writePointer(temp, 0, item.subject);
-		ref.readCString(temp, )
-		console.log('email: ', temp);
-*/
+		subject = ref.readPointer(item.subject, 0);
+
+		console.log('email: ', subject);
+
 	}
 	libpst.pst_close(f.ref());
 }
