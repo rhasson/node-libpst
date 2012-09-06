@@ -7,7 +7,7 @@ var ref = require('ref');
 var ffi = require('ffi');
 var Struct = require('ref-struct');
 
-var file_name = '/mnt/hgfs/server/outlook.ost';
+var file_name = 'outlook.pst';
 
 /** The string is either utf8 encoded, or it is in the code page
  *  specified by the containing mapi object. It can be forced into
@@ -1135,7 +1135,7 @@ var pstitem_Ptr = ref.refType(pst_item);
 var pststring_Ptr = ref.refType(pst_string);
 var pstbinary_Ptr = ref.refType(pst_binary);
 
-var libpst = new ffi.Library('../libpst.so.1.0.1', {
+var libpst = new ffi.Library('../libpst/lib/libpst.4.dylib', {
 	'pst_open': ['int', [pstfile_Ptr, 'CString', 'CString']],
 	'pst_close': ['int', [pstfile_Ptr]],
 	'pst_load_index': ['int', [pstfile_Ptr]],
@@ -1167,15 +1167,12 @@ if (libpst) {
 		console.log('f: ', f);
 		console.log('i_head: ', ref.isNull(f.i_head));
 		console.log('i_tail: ', ref.isNull(f.i_tail));
-		//var d = ref.readPointer(f.i_tail);
-		console.log(f.i_tail);
-		//console.log('id: ', d.i_id, ' size: ', d.size);
 		console.log('d_head: ', ref.isNull(f.d_head));
 		console.log('d_tail: ', ref.isNull(f.d_tail));
 		console.log('x_head: ', ref.isNull(f.x_head));
 		console.log('block_head: ', ref.isNull(f.block_head));		
-//		var t = f.i_head.deref();  //seems to be returning a null pointer
-//		console.log(t);
+		var t = f.i_head.deref();  //this is an unreadable memory which causes a seg fault
+		console.log(t);
 
 /*		ref.writePointer(d_ptr, 0, f.d_head);
 		console.log('parsing first item...');
