@@ -1152,23 +1152,39 @@ if (libpst) {
 
 	var ret = libpst.pst_open(f.ref(), file_name, null);
 	if (ret !== -1) {
+		ret = null;
 		console.log('File ' + f.fname + ' was opened successfully');
+
 		console.log('Loading index...');
-		libpst.pst_load_index(f.ref());
+		ret = libpst.pst_load_index(f.ref());
+		console.log('index ret: ', ret);
+		ret = null;
+
 		console.log('Loading extended attributes...');
-		libpst.pst_load_extended_attributes(f.ref());
-/*		
-		var t = ref.readPointer(f.d_head, 0);  //seems to be returning a null pointer
-		console.log(t);
-*/
-		ref.writePointer(d_ptr, 0, f.d_head);
+		ret = libpst.pst_load_extended_attributes(f.ref());
+		console.log('extended ret: ', ret);
+
+		console.log('f: ', f);
+		console.log('i_head: ', ref.isNull(f.i_head));
+		console.log('i_tail: ', ref.isNull(f.i_tail));
+		//var d = ref.readPointer(f.i_tail);
+		console.log(f.i_tail);
+		//console.log('id: ', d.i_id, ' size: ', d.size);
+		console.log('d_head: ', ref.isNull(f.d_head));
+		console.log('d_tail: ', ref.isNull(f.d_tail));
+		console.log('x_head: ', ref.isNull(f.x_head));
+		console.log('block_head: ', ref.isNull(f.block_head));		
+//		var t = f.i_head.deref();  //seems to be returning a null pointer
+//		console.log(t);
+
+/*		ref.writePointer(d_ptr, 0, f.d_head);
 		console.log('parsing first item...');
 		item = libpst.pst_parse_item(f.ref(), d_ptr.ref(), null);
 		
 		subject = ref.readPointer(item.subject, 0);
 
 		console.log('email: ', subject);
-
+*/
 	}
 	libpst.pst_close(f.ref());
 }
