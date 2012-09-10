@@ -63,7 +63,7 @@ var pst_index_ll = Struct ({
     'u1': 'int64'
 });
 	// struct pst_index_ll *next;
-pst_index_ll.defineProperty('next', ref.refType(pst_index_ll));
+pst_index_ll.defineProperty('next', pst_index_ll);
 
 var pst_id2_tree = Struct({
     /*uint64_t            id2; */
@@ -72,9 +72,9 @@ var pst_id2_tree = Struct({
     /*pst_index_ll        *id;
     struct pst_id2_tree *child;
     struct pst_id2_tree *next;*/
-    pst_id2_tree.defineProperty('id', ref.refType(pst_index_ll));
-    pst_id2_tree.defineProperty('child', ref.refType(pst_id2_tree));
-    pst_id2_tree.defineProperty('next', ref.refType(pst_id2_tree));
+    pst_id2_tree.defineProperty('id', pst_index_ll);
+    pst_id2_tree.defineProperty('child', pst_id2_tree);
+    pst_id2_tree.defineProperty('next', pst_id2_tree);
 
 /** This contains the email related mapi elements
  */
@@ -198,113 +198,113 @@ var pst_item_email = Struct({
 });
     /** mapi element 0x0e03 PR_DISPLAY_CC 
     pst_string  cc_address; */
-    pst_item_email.defineProperty('cc_address', ref.refType(pst_string));
+    pst_item_email.defineProperty('cc_address', pst_string);
     /** mapi element 0x0e02 PR_DISPLAY_BCC 
     pst_string  bcc_address; */
-    pst_item_email.defineProperty('bcc_address', ref.refType(pst_string));
+    pst_item_email.defineProperty('bcc_address', pst_string);
     /** mapi element 0x0071 PR_CONVERSATION_INDEX 
     pst_binary  conversation_index; */
-    pst_item_email.defineProperty('conversation_index', ref.refType(pst_binary));
+    pst_item_email.defineProperty('conversation_index', pst_binary);
     /** mapi element 0x6f04 
     pst_binary  encrypted_body; */
-    pst_item_email.defineProperty('encrypted_body', ref.refType(pst_binary));
+    pst_item_email.defineProperty('encrypted_body', pst_binary);
     /** mapi element 0x6f02 
     pst_binary  encrypted_htmlbody; */
-    pst_item_email.defineProperty('encrypted_htmlbody', ref.refType(pst_binary));
+    pst_item_email.defineProperty('encrypted_htmlbody', pst_binary);
     /** mapi element 0x007d PR_TRANSPORT_MESSAGE_HEADERS 
     pst_string  header; */
-    pst_item_email.defineProperty('header', ref.refType(pst_string));
+    pst_item_email.defineProperty('header', pst_string);
     /** mapi element 0x1013 
     pst_string  htmlbody; */
-    pst_item_email.defineProperty('htmlbody', ref.refType(pst_string));
+    pst_item_email.defineProperty('htmlbody', pst_string);
     /** mapi element 0x1042 
     pst_string  in_reply_to; */
-    pst_item_email.defineProperty('in_reply_to', ref.refType(pst_string));
+    pst_item_email.defineProperty('in_reply_to', pst_string);
     /** mapi element 0x1035 
     pst_string  messageid; */
-    pst_item_email.defineProperty('messageid', ref.refType(pst_string));
+    pst_item_email.defineProperty('messageid', pst_string);
     /** mapi element 0x0072 PR_ORIGINAL_DISPLAY_BCC 
     pst_string  original_bcc; */
-    pst_item_email.defineProperty('original_bcc', ref.refType(pst_string));
+    pst_item_email.defineProperty('original_bcc', pst_string);
     /** mapi element 0x0073 PR_ORIGINAL_DISPLAY_CC 
     pst_string  original_cc; */
-    pst_item_email.defineProperty('original_cc', ref.refType(pst_string));
+    pst_item_email.defineProperty('original_cc', pst_string);
     /** mapi element 0x0074 PR_ORIGINAL_DISPLAY_TO 
     pst_string  original_to; */
-    pst_item_email.defineProperty('original_to', ref.refType(pst_string));
+    pst_item_email.defineProperty('original_to', pst_string);
     /** mapi element 0x0051 PR_RECEIVED_BY_SEARCH_KEY 
     pst_string  outlook_recipient; */
-    pst_item_email.defineProperty('outlook_recipient', ref.refType(pst_string));
+    pst_item_email.defineProperty('outlook_recipient', pst_string);
     /** mapi element 0x0044 PR_RCVD_REPRESENTING_NAME 
     pst_string  outlook_recipient_name; */
-    pst_item_email.defineProperty('outlook_recipient_name', ref.refType(pst_string));
+    pst_item_email.defineProperty('outlook_recipient_name', pst_string);
     /** mapi element 0x0052 PR_RCVD_REPRESENTING_SEARCH_KEY 
     pst_string  outlook_recipient2; */
-    pst_item_email.defineProperty('outlook_recipient2', ref.refType(pst_string));
+    pst_item_email.defineProperty('outlook_recipient2', pst_string);
     /** mapi element 0x003b PR_SENT_REPRESENTING_SEARCH_KEY 
     pst_string  outlook_sender; */
-    pst_item_email.defineProperty('outlook_sender', ref.refType(pst_string));
+    pst_item_email.defineProperty('outlook_sender', pst_string);
     /** mapi element 0x0042 PR_SENT_REPRESENTING_NAME 
     pst_string  outlook_sender_name; */
-    pst_item_email.defineProperty('outlook_sender_name', ref.refType(pst_string));
+    pst_item_email.defineProperty('outlook_sender_name', pst_string);
     /** mapi element 0x0c1d PR_SENDER_SEARCH_KEY 
     pst_string  outlook_sender2; */
-    pst_item_email.defineProperty('outlook_sender2', ref.refType(pst_string));
+    pst_item_email.defineProperty('outlook_sender2', pst_string);
     /** mapi element 0x0070 PR_CONVERSATION_TOPIC 
     pst_string  processed_subject; */
-    pst_item_email.defineProperty('processed_subject', ref.refType(pst_string));
+    pst_item_email.defineProperty('processed_subject', pst_string);
     /** mapi element 0x0075 PR_RECEIVED_BY_ADDRTYPE 
     pst_string  recip_access; */
-    pst_item_email.defineProperty('recip_access', ref.refType(pst_string));
+    pst_item_email.defineProperty('recip_access', pst_string);
     /** mapi element 0x0076 PR_RECEIVED_BY_EMAIL_ADDRESS 
     pst_string  recip_address; */
-    pst_item_email.defineProperty('recip_address', ref.refType(pst_string));
+    pst_item_email.defineProperty('recip_address', pst_string);
     /** mapi element 0x0077 PR_RCVD_REPRESENTING_ADDRTYPE 
     pst_string  recip2_access; */
-    pst_item_email.defineProperty('recip2_access', ref.refType(pst_string));
+    pst_item_email.defineProperty('recip2_access', pst_string);
     /** mapi element 0x0078 PR_RCVD_REPRESENTING_EMAIL_ADDRESS 
     pst_string  recip2_address; */
-    pst_item_email.defineProperty('recip2_address', ref.refType(pst_string));
+    pst_item_email.defineProperty('recip2_address', pst_string);
     /** mapi element 0x0050 PR_REPLY_RECIPIENT_NAMES 
     pst_string  reply_to; */
-    pst_item_email.defineProperty('reply_to', ref.refType(pst_string));
+    pst_item_email.defineProperty('reply_to', pst_string);
     /** mapi element 0x1046, this seems to be the message-id of the rfc822 mail that is being returned 
     pst_string  return_path_address; */
-    pst_item_email.defineProperty('return_path_address', ref.refType(pst_string));
+    pst_item_email.defineProperty('return_path_address', pst_string);
     /** mapi element 0x1008 PR_RTF_SYNC_BODY_TAG,
      *  the first couple of lines of RTF body so that after modification, then beginning can
      *  once again be found. 
     pst_string  rtf_body_tag; */
-    pst_item_email.defineProperty('rtf_body_tag', ref.refType(pst_string));
+    pst_item_email.defineProperty('rtf_body_tag', pst_string);
     /** mapi element 0x1009 PR_RTF_COMPRESSED,
      *  the compressed rtf body data.
      *  Use pst_lzfu_decompress() to retrieve the actual rtf body data. 
     pst_binary  rtf_compressed; */
-    pst_item_email.defineProperty('rtf_compressed', ref.refType(pst_binary));
+    pst_item_email.defineProperty('rtf_compressed', pst_binary);
     /** mapi element 0x0064 PR_SENT_REPRESENTING_ADDRTYPE 
     pst_string  sender_access; */
-    pst_item_email.defineProperty('sender_access', ref.refType(pst_string));
+    pst_item_email.defineProperty('sender_access', pst_string);
     /** mapi element 0x0065 PR_SENT_REPRESENTING_EMAIL_ADDRESS 
     pst_string  sender_address; */
-    pst_item_email.defineProperty('sender_address', ref.refType(pst_string));
+    pst_item_email.defineProperty('sender_address', pst_string);
     /** mapi element 0x0c1e PR_SENDER_ADDRTYPE 
     pst_string  sender2_access; */
-    pst_item_email.defineProperty('sender2_access', ref.refType(pst_string));
+    pst_item_email.defineProperty('sender2_access', pst_string);
     /** mapi element 0x0c1f PR_SENDER_EMAIL_ADDRESS 
     pst_string  sender2_address; */
-    pst_item_email.defineProperty('sender2_address', ref.refType(pst_string));
+    pst_item_email.defineProperty('sender2_address', pst_string);
     /** mapi element 0x0e0a PR_SENTMAIL_ENTRYID 
     pst_entryid *sentmail_folder; */
-    pst_item_email.defineProperty('sentmail_folder', ref.refType(pst_entryid));
+    pst_item_email.defineProperty('sentmail_folder', pst_entryid);
     /** mapi element 0x0e04 PR_DISPLAY_TO 
     pst_string  sentto_address; */
-    pst_item_email.defineProperty('sentto_address', ref.refType(pst_string));
+    pst_item_email.defineProperty('sentto_address', pst_string);
     /** mapi element 0x1001 PR_REPORT_TEXT, delivery report dsn body 
     pst_string  report_text; */
-    pst_item_email.defineProperty('report_text', ref.refType(pst_string));
+    pst_item_email.defineProperty('report_text', pst_string);
     /** mapi element 0x0c1b PR_SUPPLEMENTARY_INFO 
     pst_string  supplementary_info; */
-    pst_item_email.defineProperty('supplementary_info', ref.refType(pst_string));
+    pst_item_email.defineProperty('supplementary_info', pst_string);
 
 /** This contains the folder related mapi elements
  */
@@ -350,28 +350,28 @@ var pst_item_message_store = Struct({
 });
     /** mapi element 0x35e0 
     pst_entryid *top_of_personal_folder; */
-    pst_item_message_store.defineProperty('top_of_personal_folder', ref.refType(pst_entryid));
+    pst_item_message_store.defineProperty('top_of_personal_folder', pst_entryid);
     /** mapi element 0x35e2 
     pst_entryid *default_outbox_folder; */
-    pst_item_message_store.defineProperty('default_outbox_folder', ref.refType(pst_entryid));
+    pst_item_message_store.defineProperty('default_outbox_folder', pst_entryid);
     /** mapi element 0x35e3 
     pst_entryid *deleted_items_folder; */
-    pst_item_message_store.defineProperty('deleted_items_folder', ref.refType(pst_entryid));
+    pst_item_message_store.defineProperty('deleted_items_folder', pst_entryid);
     /** mapi element 0x35e4 
     pst_entryid *sent_items_folder; */
-    pst_item_message_store.defineProperty('sent_items_folder', ref.refType(pst_entryid));
+    pst_item_message_store.defineProperty('sent_items_folder', pst_entryid);
     /** mapi element 0x35e5 
     pst_entryid *user_views_folder; */
-    pst_item_message_store.defineProperty('user_views_folder', ref.refType(pst_entryid));
+    pst_item_message_store.defineProperty('user_views_folder', pst_entryid);
     /** mapi element 0x35e6 
     pst_entryid *common_view_folder; */
-    pst_item_message_store.defineProperty('common_view_folder', ref.refType(pst_entryid));
+    pst_item_message_store.defineProperty('common_view_folder', pst_entryid);
     /** mapi element 0x35e7 
     pst_entryid *search_root_folder; */
-    pst_item_message_store.defineProperty('search_root_folder', ref.refType(pst_entryid));
+    pst_item_message_store.defineProperty('search_root_folder', pst_entryid);
     /** mapi element 0x7c07 
     pst_entryid *top_of_folder; */
-    pst_item_message_store.defineProperty('top_of_folder', ref.refType(pst_entryid));
+    pst_item_message_store.defineProperty('top_of_folder', pst_entryid);
 
 
 /** This contains the contact related mapi elements
@@ -403,286 +403,286 @@ var pst_item_contact = Struct({
 });
     /** mapi element 0x3a00 PR_ACCOUNT 
     pst_string  account_name; */
-    pst_item_contact.defineProperty('account_name', ref.refType(pst_string));
+    pst_item_contact.defineProperty('account_name', pst_string);
     /** mapi element 0x3003 PR_EMAIL_ADDRESS, or 0x8083 
     pst_string  address1; */
-    pst_item_contact.defineProperty('address1', ref.refType(pst_string));
+    pst_item_contact.defineProperty('address1', pst_string);
     /** mapi element 0x8085 
     pst_string  address1a; */
-    pst_item_contact.defineProperty('address1a', ref.refType(pst_string));
+    pst_item_contact.defineProperty('address1a', pst_string);
     /** mapi element 0x8084 
     pst_string  address1_desc; */
-    pst_item_contact.defineProperty('address1_desc', ref.refType(pst_string));
+    pst_item_contact.defineProperty('address1_desc', pst_string);
     /** mapi element 0x3002 PR_ADDRTYPE, or 0x8082 
     pst_string  address1_transport; */
-    pst_item_contact.defineProperty('address1_transport', ref.refType(pst_string));
+    pst_item_contact.defineProperty('address1_transport', pst_string);
     /** mapi element 0x8093 
     pst_string  address2; */
-    pst_item_contact.defineProperty('address2', ref.refType(pst_string));
+    pst_item_contact.defineProperty('address2', pst_string);
     /** mapi element 0x8095 
     pst_string  address2a; */
-    pst_item_contact.defineProperty('address2a', ref.refType(pst_string));
+    pst_item_contact.defineProperty('address2a', pst_string);
     /** mapi element 0x8094 
     pst_string  address2_desc; */
-    pst_item_contact.defineProperty('address2_desc', ref.refType(pst_string));
+    pst_item_contact.defineProperty('address2_desc', pst_string);
     /** mapi element 0x8092 
     pst_string  address2_transport; */
-    pst_item_contact.defineProperty('address2_transport', ref.refType(pst_string));
+    pst_item_contact.defineProperty('address2_transport', pst_string);
     /** mapi element 0x80a3 
     pst_string  address3; */
-    pst_item_contact.defineProperty('address3', ref.refType(pst_string));
+    pst_item_contact.defineProperty('address3', pst_string);
     /** mapi element 0x80a5 
     pst_string  address3a; */
-    pst_item_contact.defineProperty('address3a', ref.refType(pst_string));
+    pst_item_contact.defineProperty('address3a', pst_string);
     /** mapi element 0x80a4 
     pst_string  address3_desc; */
-    pst_item_contact.defineProperty('address3_desc', ref.refType(pst_string));
+    pst_item_contact.defineProperty('address3_desc', pst_string);
     /** mapi element 0x80a2 
     pst_string  address3_transport; */
-    pst_item_contact.defineProperty('address3_transport', ref.refType(pst_string));
+    pst_item_contact.defineProperty('address3_transport', pst_string);
     /** mapi element 0x3a30 PR_ASSISTANT 
     pst_string  assistant_name; */
-    pst_item_contact.defineProperty('assistant_name', ref.refType(pst_string));
+    pst_item_contact.defineProperty('assistant_name', pst_string);
     /** mapi element 0x3a2e PR_ASSISTANT_TELEPHONE_NUMBER 
     pst_string  assistant_phone; */
-    pst_item_contact.defineProperty('assistant_phone', ref.refType(pst_string));
+    pst_item_contact.defineProperty('assistant_phone', pst_string);
     /** mapi element 0x8535 
     pst_string  billing_information; */
-    pst_item_contact.defineProperty('billing_information', ref.refType(pst_string));
+    pst_item_contact.defineProperty('billing_information', pst_string);
     /** mapi element 0x801b 
     pst_string  business_address; */
-    pst_item_contact.defineProperty('business_address', ref.refType(pst_string));
+    pst_item_contact.defineProperty('business_address', pst_string);
     /** mapi element 0x3a27 PR_BUSINESS_ADDRESS_CITY 
     pst_string  business_city; */
-    pst_item_contact.defineProperty('business_city', ref.refType(pst_string));
+    pst_item_contact.defineProperty('business_city', pst_string);
     /** mapi element 0x3a26 PR_BUSINESS_ADDRESS_COUNTRY 
     pst_string  business_country; */
-    pst_item_contact.defineProperty('business_country', ref.refType(pst_string));
+    pst_item_contact.defineProperty('business_country', pst_string);
     /** mapi element 0x3a24 PR_BUSINESS_FAX_NUMBER 
     pst_string  business_fax; */
-    pst_item_contact.defineProperty('business_fax', ref.refType(pst_string));
+    pst_item_contact.defineProperty('business_fax', pst_string);
     /** mapi element 0x3a51 PR_BUSINESS_HOME_PAGE 
     pst_string  business_homepage; */
-    pst_item_contact.defineProperty('business_homepage', ref.refType(pst_string));
+    pst_item_contact.defineProperty('business_homepage', pst_string);
     /** mapi element 0x3a08 PR_BUSINESS_TELEPHONE_NUMBER 
     pst_string  business_phone; */
-    pst_item_contact.defineProperty('business_phone', ref.refType(pst_string));
+    pst_item_contact.defineProperty('business_phone', pst_string);
     /** mapi element 0x3a1b PR_BUSINESS2_TELEPHONE_NUMBER 
     pst_string  business_phone2; */
-    pst_item_contact.defineProperty('business_phone2', ref.refType(pst_string));
+    pst_item_contact.defineProperty('business_phone2', pst_string);
     /** mapi element 0x3a2b PR_BUSINESS_PO_BOX 
     pst_string  business_po_box; */
-    pst_item_contact.defineProperty('business_po_box', ref.refType(pst_string));
+    pst_item_contact.defineProperty('business_po_box', pst_string);
     /** mapi element 0x3a2a PR_BUSINESS_POSTAL_CODE 
     pst_string  business_postal_code; */
-    pst_item_contact.defineProperty('business_postal_code', ref.refType(pst_string));
+    pst_item_contact.defineProperty('business_postal_code', pst_string);
     /** mapi element 0x3a28 PR_BUSINESS_ADDRESS_STATE_OR_PROVINCE 
     pst_string  business_state; */
-    pst_item_contact.defineProperty('business_state', ref.refType(pst_string));
+    pst_item_contact.defineProperty('business_state', pst_string);
     /** mapi element 0x3a29 PR_BUSINESS_ADDRESS_STREET
     pst_string  business_street; */
-    pst_item_contact.defineProperty('business_street', ref.refType(pst_string));
+    pst_item_contact.defineProperty('business_street', pst_string);
     /** mapi element 0x3a02 PR_CALLBACK_TELEPHONE_NUMBER 
     pst_string  callback_phone; */
-    pst_item_contact.defineProperty('callback_phone', ref.refType(pst_string));
+    pst_item_contact.defineProperty('callback_phone', pst_string);
     /** mapi element 0x3a1e PR_CAR_TELEPHONE_NUMBER 
     pst_string  car_phone; */
-    pst_item_contact.defineProperty('car_phone', ref.refType(pst_string));
+    pst_item_contact.defineProperty('car_phone', pst_string);
     /** mapi element 0x3a57 PR_COMPANY_MAIN_PHONE_NUMBER 
     pst_string  company_main_phone; */
-    pst_item_contact.defineProperty('company_main_phone', ref.refType(pst_string));
+    pst_item_contact.defineProperty('company_main_phone', pst_string);
     /** mapi element 0x3a16 PR_COMPANY_NAME 
     pst_string  company_name; */
-    pst_item_contact.defineProperty('company_name', ref.refType(pst_string));
+    pst_item_contact.defineProperty('company_name', pst_string);
     /** mapi element 0x3a49 PR_COMPUTER_NETWORK_NAME 
     pst_string  computer_name; */
-    pst_item_contact.defineProperty('computer_name', ref.refType(pst_string));
+    pst_item_contact.defineProperty('computer_name', pst_string);
     /** mapi element 0x3a4a PR_CUSTOMER_ID 
     pst_string  customer_id; */
-    pst_item_contact.defineProperty('customer_id', ref.refType(pst_string));
+    pst_item_contact.defineProperty('customer_id', pst_string);
     /** mapi element 0x3a15 PR_POSTAL_ADDRESS 
     pst_string  def_postal_address; */
-    pst_item_contact.defineProperty('def_postal_address', ref.refType(pst_string));
+    pst_item_contact.defineProperty('def_postal_address', pst_string);
     /** mapi element 0x3a18 PR_DEPARTMENT_NAME 
     pst_string  department; */
-    pst_item_contact.defineProperty('department', ref.refType(pst_string));
+    pst_item_contact.defineProperty('department', pst_string);
     /** mapi element 0x3a45 PR_DISPLAY_NAME_PREFIX 
     pst_string  display_name_prefix; */
-    pst_item_contact.defineProperty('display_name_prefix', ref.refType(pst_string));
+    pst_item_contact.defineProperty('display_name_prefix', pst_string);
     /** mapi element 0x3a06 PR_GIVEN_NAME 
     pst_string  first_name; */
-    pst_item_contact.defineProperty('first_name', ref.refType(pst_string));
+    pst_item_contact.defineProperty('first_name', pst_string);
     /** mapi element 0x8530 
     pst_string  followup; */
-    pst_item_contact.defineProperty('followup', ref.refType(pst_string));
+    pst_item_contact.defineProperty('followup', pst_string);
     /** mapi element 0x80d8 
     pst_string  free_busy_address; */
-    pst_item_contact.defineProperty('free_busy_address', ref.refType(pst_string));
+    pst_item_contact.defineProperty('free_busy_address', pst_string);
     /** mapi element 0x3a4c PR_FTP_SITE 
     pst_string  ftp_site; */
-    pst_item_contact.defineProperty('ftp_site', ref.refType(pst_string));
+    pst_item_contact.defineProperty('ftp_site', pst_string);
     /** mapi element 0x8005 
     pst_string  fullname; */
-    pst_item_contact.defineProperty('fullname', ref.refType(pst_string));
+    pst_item_contact.defineProperty('fullname', pst_string);
     /** mapi element 0x3a07 PR_GOVERNMENT_ID_NUMBER 
     pst_string  gov_id; */
-    pst_item_contact.defineProperty('gov_id', ref.refType(pst_string));
+    pst_item_contact.defineProperty('gov_id', pst_string);
     /** mapi element 0x3a43 PR_HOBBIES 
     pst_string  hobbies; */
-    pst_item_contact.defineProperty('hobbies', ref.refType(pst_string));
+    pst_item_contact.defineProperty('hobbies', pst_string);
     /** mapi element 0x801a 
     pst_string  home_address; */
-    pst_item_contact.defineProperty('home_address', ref.refType(pst_string));
+    pst_item_contact.defineProperty('home_address', pst_string);
     /** mapi element 0x3a59 PR_HOME_ADDRESS_CITY 
     pst_string  home_city; */
-    pst_item_contact.defineProperty('home_city', ref.refType(pst_string));
+    pst_item_contact.defineProperty('home_city', pst_string);
     /** mapi element 0x3a5a PR_HOME_ADDRESS_COUNTRY 
     pst_string  home_country; */
-    pst_item_contact.defineProperty('home_country', ref.refType(pst_string));
+    pst_item_contact.defineProperty('home_country', pst_string);
     /** mapi element 0x3a25 PR_HOME_FAX_NUMBER 
     pst_string  home_fax; */
-    pst_item_contact.defineProperty('home_fax', ref.refType(pst_string));
+    pst_item_contact.defineProperty('home_fax', pst_string);
     /** mapi element 0x3a09 PR_HOME_TELEPHONE_NUMBER 
     pst_string  home_phone; */
-    pst_item_contact.defineProperty('home_phone', ref.refType(pst_string));
+    pst_item_contact.defineProperty('home_phone', pst_string);
     /** mapi element 0x3a2f PR_HOME2_TELEPHONE_NUMBER 
     pst_string  home_phone2; */
-    pst_item_contact.defineProperty('home_phone2', ref.refType(pst_string));
+    pst_item_contact.defineProperty('home_phone2', pst_string);
     /** mapi element 0x3a5e PR_HOME_ADDRESS_POST_OFFICE_BOX 
     pst_string  home_po_box; */
-    pst_item_contact.defineProperty('home_po_box', ref.refType(pst_string));
+    pst_item_contact.defineProperty('home_po_box', pst_string);
     /** mapi element 0x3a5b PR_HOME_ADDRESS_POSTAL_CODE 
     pst_string  home_postal_code; */
-    pst_item_contact.defineProperty('home_postal_code', ref.refType(pst_string));
+    pst_item_contact.defineProperty('home_postal_code', pst_string);
     /** mapi element 0x3a5c PR_HOME_ADDRESS_STATE_OR_PROVINCE 
     pst_string  home_state; */
-    pst_item_contact.defineProperty('home_state', ref.refType(pst_string));
+    pst_item_contact.defineProperty('home_state', pst_string);
     /** mapi element 0x3a5d PR_HOME_ADDRESS_STREET 
     pst_string  home_street; */
-    pst_item_contact.defineProperty('home_street', ref.refType(pst_string));
+    pst_item_contact.defineProperty('home_street', pst_string);
     /** mapi element 0x3a0a PR_INITIALS 
     pst_string  initials; */
-    pst_item_contact.defineProperty('initials', ref.refType(pst_string));
+    pst_item_contact.defineProperty('initials', pst_string);
     /** mapi element 0x3a2d PR_ISDN_NUMBER 
     pst_string  isdn_phone; */
-    pst_item_contact.defineProperty('isdn_phone', ref.refType(pst_string));
+    pst_item_contact.defineProperty('isdn_phone', pst_string);
     /** mapi element 0x3a17 PR_TITLE 
     pst_string  job_title; */
-    pst_item_contact.defineProperty('job_title', ref.refType(pst_string));
+    pst_item_contact.defineProperty('job_title', pst_string);
     /** mapi element 0x3a0b PR_KEYWORD 
     pst_string  keyword; */
-    pst_item_contact.defineProperty('keyword', ref.refType(pst_string));
+    pst_item_contact.defineProperty('keyword', pst_string);
     /** mapi element 0x3a0c PR_LANGUAGE 
     pst_string  language; */
-    pst_item_contact.defineProperty('language', ref.refType(pst_string));
+    pst_item_contact.defineProperty('language', pst_string);
     /** mapi element 0x3a0d PR_LOCATION 
     pst_string  location; */
-    pst_item_contact.defineProperty('location', ref.refType(pst_string));
+    pst_item_contact.defineProperty('location', pst_string);
     /** mapi element 0x3a4e PR_MANAGER_NAME 
     pst_string  manager_name; */
-    pst_item_contact.defineProperty('manager_name', ref.refType(pst_string));
+    pst_item_contact.defineProperty('manager_name', pst_string);
     /** mapi element 0x3a44 PR_MIDDLE_NAME 
     pst_string  middle_name; */
-    pst_item_contact.defineProperty('middle_name', ref.refType(pst_string));
+    pst_item_contact.defineProperty('middle_name', pst_string);
     /** mapi element 0x8534 
     pst_string  mileage; */
-    pst_item_contact.defineProperty('mileage', ref.refType(pst_string));
+    pst_item_contact.defineProperty('mileage', pst_string);
     /** mapi element 0x3a1c PR_MOBILE_TELEPHONE_NUMBER 
     pst_string  mobile_phone; */
-    pst_item_contact.defineProperty('mobile_phone', ref.refType(pst_string));
+    pst_item_contact.defineProperty('mobile_phone', pst_string);
     /** mapi element 0x3a4f PR_NICKNAME 
     pst_string  nickname; */
-    pst_item_contact.defineProperty('nickname', ref.refType(pst_string));
+    pst_item_contact.defineProperty('nickname', pst_string);
     /** mapi element 0x3a19 PR_OFFICE_LOCATION 
     pst_string  office_loc; */
-    pst_item_contact.defineProperty('office_loc', ref.refType(pst_string));
+    pst_item_contact.defineProperty('office_loc', pst_string);
     /** mapi element 0x3a0f PR_MHS_COMMON_NAME 
     pst_string  common_name; */
-    pst_item_contact.defineProperty('common_name', ref.refType(pst_string));
+    pst_item_contact.defineProperty('common_name', pst_string);
     /** mapi element 0x3a10 PR_ORGANIZATIONAL_ID_NUMBER 
     pst_string  org_id; */
-    pst_item_contact.defineProperty('org_id', ref.refType(pst_string));
+    pst_item_contact.defineProperty('org_id', pst_string);
     /** mapi element 0x801c 
     pst_string  other_address; */
-    pst_item_contact.defineProperty('other_address', ref.refType(pst_string));
+    pst_item_contact.defineProperty('other_address', pst_string);
     /** mapi element 0x3a5f PR_OTHER_ADDRESS_CITY 
     pst_string  other_city; */
-    pst_item_contact.defineProperty('other_city', ref.refType(pst_string));
+    pst_item_contact.defineProperty('other_city', pst_string);
     /** mapi element 0x3a60 PR_OTHER_ADDRESS_COUNTRY 
     pst_string  other_country; */
-    pst_item_contact.defineProperty('other_country', ref.refType(pst_string));
+    pst_item_contact.defineProperty('other_country', pst_string);
     /** mapi element 0x3a1f PR_OTHER_TELEPHONE_NUMBER 
     pst_string  other_phone; */
-    pst_item_contact.defineProperty('other_phone', ref.refType(pst_string));
+    pst_item_contact.defineProperty('other_phone', pst_string);
     /** mapi element 0x3a64 PR_OTHER_ADDRESS_POST_OFFICE_BOX 
     pst_string  other_po_box; */
-    pst_item_contact.defineProperty('other_po_box', ref.refType(pst_string));
+    pst_item_contact.defineProperty('other_po_box', pst_string);
     /** mapi element 0x3a61 PR_OTHER_ADDRESS_POSTAL_CODE 
     pst_string  other_postal_code; */
-    pst_item_contact.defineProperty('other_postal_code', ref.refType(pst_string));
+    pst_item_contact.defineProperty('other_postal_code', pst_string);
     /** mapi element 0x3a62 PR_OTHER_ADDRESS_STATE_OR_PROVINCE 
     pst_string  other_state; */
-    pst_item_contact.defineProperty('other_state', ref.refType(pst_string));
+    pst_item_contact.defineProperty('other_state', pst_string);
     /** mapi element 0x3a63 PR_OTHER_ADDRESS_STREET 
     pst_string  other_street; */
-    pst_item_contact.defineProperty('other_street', ref.refType(pst_string));
+    pst_item_contact.defineProperty('other_street', pst_string);
     /** mapi element 0x3a21 PR_PAGER_TELEPHOE_NUMBER 
     pst_string  pager_phone; */
-    pst_item_contact.defineProperty('pager_phone', ref.refType(pst_string));
+    pst_item_contact.defineProperty('pager_phone', pst_string);
     /** mapi element 0x3a50 PR_PERSONAL_HOME_PAGE 
     pst_string  personal_homepage; */
-    pst_item_contact.defineProperty('personal_homepage', ref.refType(pst_string));
+    pst_item_contact.defineProperty('personal_homepage', pst_string);
     /** mapi element 0x3a47 PR_PREFERRED_BY_NAME 
     pst_string  pref_name; */
-    pst_item_contact.defineProperty('pref_name', ref.refType(pst_string));
+    pst_item_contact.defineProperty('pref_name', pst_string);
     /** mapi element 0x3a23 PR_PRIMARY_FAX_NUMBER 
     pst_string  primary_fax; */
-    pst_item_contact.defineProperty('primary_fax', ref.refType(pst_string));
+    pst_item_contact.defineProperty('primary_fax', pst_string);
     /** mapi element 0x3a1a PR_PRIMARY_TELEPHONE_NUMBER 
     pst_string  primary_phone; */
-    pst_item_contact.defineProperty('primary_phone', ref.refType(pst_string));
+    pst_item_contact.defineProperty('primary_phone', pst_string);
     /** mapi element 0x3a46 PR_PROFESSION 
     pst_string  profession; */
-    pst_item_contact.defineProperty('profession', ref.refType(pst_string));
+    pst_item_contact.defineProperty('profession', pst_string);
     /** mapi element 0x3a1d PR_RADIO_TELEPHONE_NUMBER 
     pst_string  radio_phone; */
-    pst_item_contact.defineProperty('radio_phone', ref.refType(pst_string));
+    pst_item_contact.defineProperty('radio_phone', pst_string);
     /** mapi element 0x3a48 PR_SPOUSE_NAME 
     pst_string  spouse_name; */
-    pst_item_contact.defineProperty('spouse_name', ref.refType(pst_string));
+    pst_item_contact.defineProperty('spouse_name', pst_string);
     /** mapi element 0x3a05 PR_GENERATION (Jr., Sr., III, etc) 
     pst_string  suffix; */
-    pst_item_contact.defineProperty('suffix', ref.refType(pst_string));
+    pst_item_contact.defineProperty('suffix', pst_string);
     /** mapi element 0x3a11 PR_SURNAME 
     pst_string  surname; */
-    pst_item_contact.defineProperty('surname', ref.refType(pst_string));
+    pst_item_contact.defineProperty('surname', pst_string);
     /** mapi element 0x3a2c PR_TELEX_NUMBER 
     pst_string  telex; */
-    pst_item_contact.defineProperty('telex', ref.refType(pst_string));
+    pst_item_contact.defineProperty('telex', pst_string);
     /** mapi element 0x3a20 PR_TRANSMITTABLE_DISPLAY_NAME 
     pst_string  transmittable_display_name; */
-    pst_item_contact.defineProperty('transmittable_display_name', ref.refType(pst_string));
+    pst_item_contact.defineProperty('transmittable_display_name', pst_string);
     /** mapi element 0x3a4b PR_TTYTDD_PHONE_NUMBER 
     pst_string  ttytdd_phone; */
-    pst_item_contact.defineProperty('ttytdd_phone', ref.refType(pst_string));
+    pst_item_contact.defineProperty('ttytdd_phone', pst_string);
     /** mapi element 0x8045  
     pst_string  work_address_street; */
-    pst_item_contact.defineProperty('work_address_street', ref.refType(pst_string));
+    pst_item_contact.defineProperty('work_address_street', pst_string);
     /** mapi element 0x8046 
     pst_string  work_address_city; */
-    pst_item_contact.defineProperty('work_address_city', ref.refType(pst_string));
+    pst_item_contact.defineProperty('work_address_city', pst_string);
     /** mapi element 0x8047 
     pst_string  work_address_state; */
-    pst_item_contact.defineProperty('work_address_state', ref.refType(pst_string));
+    pst_item_contact.defineProperty('work_address_state', pst_string);
     /** mapi element 0x8048 
     pst_string  work_address_postalcode; */
-    pst_item_contact.defineProperty('work_address_postalcode', ref.refType(pst_string));
+    pst_item_contact.defineProperty('work_address_postalcode', pst_string);
     /** mapi element 0x8049 
     pst_string  work_address_country; */
-    pst_item_contact.defineProperty('work_address_country', ref.refType(pst_string));
+    pst_item_contact.defineProperty('work_address_country', pst_string);
     /** mapi element 0x804a 
     pst_string  work_address_postofficebox; */
-    pst_item_contact.defineProperty('work_address_postofficebox', ref.refType(pst_string));
+    pst_item_contact.defineProperty('work_address_postofficebox', pst_string);
 
 /** This contains the attachment related mapi elements
  */
@@ -712,21 +712,21 @@ var pst_item_attach = Struct({
 });
     /** mapi element 0x3704 PR_ATTACH_FILENAME 
     pst_string      filename1; */
-    pst_item_attach.defineProperty('filename1', ref.refType(pst_string));
+    pst_item_attach.defineProperty('filename1', pst_string);
     /** mapi element 0x3707 PR_ATTACH_LONG_FILENAME 
     pst_string      filename2; */
-    pst_item_attach.defineProperty('filename2', ref.refType(pst_string));
+    pst_item_attach.defineProperty('filename2', pst_string);
     /** mapi element 0x370e PR_ATTACH_MIME_TAG 
     pst_string      mimetype; */
-    pst_item_attach.defineProperty('mimetype', ref.refType(pst_string));
+    pst_item_attach.defineProperty('mimetype', pst_string);
     /** mapi element 0x3701 PR_ATTACH_DATA_OBJ 
     pst_binary      data; */
-    pst_item_attach.defineProperty('data', ref.refType(pst_binary));
+    pst_item_attach.defineProperty('data', pst_binary);
     /** id2 tree needed to resolve attachments by reference 
     pst_id2_tree    *id2_head; */
-    pst_item_attach.defineProperty('id2_head', ref.refType(pst_id2_tree));
+    pst_item_attach.defineProperty('id2_head', pst_id2_tree);
     //struct pst_item_attach *next;
-    pst_item_attach.defineProperty('next', ref.refType(pst_item_attach));
+    pst_item_attach.defineProperty('next', pst_item_attach);
 
 
 /** linked list of extra header fields */
@@ -737,7 +737,7 @@ var pst_item_extra_field = Struct({
     'value': 'CString'
 });
 	//struct pst_item_extra_field *next;
-	pst_item_extra_field.defineProperty('next', ref.refType(pst_item_extra_field));
+	pst_item_extra_field.defineProperty('next', pst_item_extra_field);
 
 /** This contains the recurrence data separated into fields.
     http://www.geocities.com/cainrandom/dev/MAPIRecurrence.html
@@ -868,19 +868,19 @@ var pst_item_appointment = Struct({
 });
     /** mapi element 0x8208 PR_OUTLOOK_EVENT_LOCATION 
     pst_string  location; */
-    pst_item_appointment.defineProperty('location', ref.refType(pst_string));
+    pst_item_appointment.defineProperty('location', pst_string);
     /** mapi element 0x851f 
     pst_string  alarm_filename; */
-    pst_item_appointment.defineProperty('alarm_filename', ref.refType(pst_string));
+    pst_item_appointment.defineProperty('alarm_filename', pst_string);
     /** mapi element 0x8234 
     pst_string  timezonestring; */
-    pst_item_appointment.defineProperty('timezonestring', ref.refType(pst_string));
+    pst_item_appointment.defineProperty('timezonestring', pst_string);
     /** mapi element 0x8232 recurrence description 
     pst_string  recurrence_description; */
-    pst_item_appointment.defineProperty('recurrence_description', ref.refType(pst_string));
+    pst_item_appointment.defineProperty('recurrence_description', pst_string);
     /** mapi element 0x8216 recurrence data 
     pst_binary  recurrence_data; */
-    pst_item_appointment.defineProperty('recurrence_data', ref.refType(pst_binary));
+    pst_item_appointment.defineProperty('recurrence_data', pst_binary);
 
 /** This contains the journal related mapi elements
  */
@@ -894,10 +894,10 @@ var pst_item_journal = Struct({
 });
     /** mapi element 0x8700 
     pst_string  type; */
-    pst_item_journal.defineProperty('type', ref.refType(pst_string));
+    pst_item_journal.defineProperty('type', pst_string);
     /** mapi element 0x8712 
     pst_string  description; */
-    pst_item_journal.defineProperty('description', ref.refType(pst_string));
+    pst_item_journal.defineProperty('description', pst_string);
 
 
 var pst_x_attrib_ll = Struct ({
@@ -915,7 +915,7 @@ var pst_x_attrib_ll = Struct ({
 });
     /** link to next item in the list 
     struct pst_x_attrib_ll *next; */
-pst_x_attrib_ll.defineProperty('next', ref.refType(pst_x_attrib_ll));
+pst_x_attrib_ll.defineProperty('next', pst_x_attrib_ll);
 
 var pst_desc_tree = Struct ({
     //uint64_t              d_id;
@@ -926,19 +926,19 @@ var pst_desc_tree = Struct ({
     'no_child': 'int32'
 });
     //pst_index_ll         *desc;
-pst_desc_tree.defineProperty('desc', ref.refType(pst_index_ll));
+pst_desc_tree.defineProperty('desc', pst_index_ll);
     //pst_index_ll         *assoc_tree;
-pst_desc_tree.defineProperty('assoc_tree', ref.refType(pst_index_ll));
+pst_desc_tree.defineProperty('assoc_tree', pst_index_ll);
     //struct pst_desc_tree *prev;
-pst_desc_tree.defineProperty('prev', ref.refType(pst_desc_tree));
+pst_desc_tree.defineProperty('prev', pst_desc_tree);
     //struct pst_desc_tree *next;
-pst_desc_tree.defineProperty('next', ref.refType(pst_desc_tree));
+pst_desc_tree.defineProperty('next', pst_desc_tree);
     //struct pst_desc_tree *parent;
-pst_desc_tree.defineProperty('parent', ref.refType(pst_desc_tree));
+pst_desc_tree.defineProperty('parent', pst_desc_tree);
     //struct pst_desc_tree *child;
-pst_desc_tree.defineProperty('child', ref.refType(pst_desc_tree));
+pst_desc_tree.defineProperty('child', pst_desc_tree);
     //struct pst_desc_tree *child_tail;
-pst_desc_tree.defineProperty('child_tail', ref.refType(pst_desc_tree));
+pst_desc_tree.defineProperty('child_tail', pst_desc_tree);
 
 var pst_block_recorder = Struct ({
     //int64_t                     offset;
@@ -949,7 +949,7 @@ var pst_block_recorder = Struct ({
     'readcount': 'int'
 });
     //struct pst_block_recorder  *next;
-pst_block_recorder.defineProperty('next', ref.refType(pst_block_recorder));
+pst_block_recorder.defineProperty('next', pst_block_recorder);
 
 var pst_file = Struct({
     /** file pointer to opened PST file
@@ -998,20 +998,20 @@ var pst_file = Struct({
 });
     /** the head and tail of the linked list of index structures 
     pst_index_ll *i_head, *i_tail; */
-pst_file.defineProperty('i_head', ref.refType(pst_index_ll));
-pst_file.defineProperty('i_tail', ref.refType(pst_index_ll));
+pst_file.defineProperty('i_head', pst_index_ll);
+pst_file.defineProperty('i_tail', pst_index_ll);
     /** the head and tail of the top level of the descriptor tree 
     pst_desc_tree  *d_head, *d_tail; */
-pst_file.defineProperty('d_head', ref.refType(pst_desc_tree));
-pst_file.defineProperty('d_tail', ref.refType(pst_desc_tree));
+pst_file.defineProperty('d_head', pst_desc_tree);
+pst_file.defineProperty('d_tail', pst_desc_tree);
     /** the head of the extended attributes linked list 
     pst_x_attrib_ll *x_head; */
-pst_file.defineProperty('x_head', ref.refType(pst_x_attrib_ll));
+pst_file.defineProperty('x_head', pst_x_attrib_ll);
     /** the head of the block recorder, a debug artifact
      *  used to detect cases where we might read the same
      *  block multiple times while processing a pst file. 
     pst_block_recorder *block_head; */
-pst_file.defineProperty('block_head', ref.refType(pst_block_recorder));
+pst_file.defineProperty('block_head', pst_block_recorder);
 
 var pst_item = Struct({
     /** block id that can be used to generate uid 
@@ -1074,55 +1074,55 @@ var pst_item = Struct({
 });
     /** pointer to the pst_file 
     struct pst_file        *pf; */
-    pst_item.defineProperty('pf', ref.refType(pst_file));
+    pst_item.defineProperty('pf', pst_file);
     /** email mapi elements 
     pst_item_email         *email; */
-    pst_item.defineProperty('email', ref.refType(pst_item_email));
+    pst_item.defineProperty('email', pst_item_email);
     /** folder mapi elements 
     pst_item_folder        *folder; */
-    pst_item.defineProperty('folder', ref.refType(pst_item_folder));
+    pst_item.defineProperty('folder', pst_item_folder);
     /** contact mapi elements 
     pst_item_contact       *contact; */
-    pst_item.defineProperty('contact', ref.refType(pst_item_contact));
+    pst_item.defineProperty('contact', pst_item_contact);
     /** linked list of attachments 
     pst_item_attach        *attach;  */
-    pst_item.defineProperty('attach', ref.refType(pst_item_attach));
+    pst_item.defineProperty('attach', pst_item_attach);
     /** message store mapi elements 
     pst_item_message_store *message_store; */
-    pst_item.defineProperty('message_store', ref.refType(pst_item_message_store));
+    pst_item.defineProperty('message_store', pst_item_message_store);
     /** linked list of extra headers and such 
     pst_item_extra_field   *extra_fields; */
-    pst_item.defineProperty('extra_fields', ref.refType(pst_item_extra_field));
+    pst_item.defineProperty('extra_fields', pst_item_extra_field);
     /** journal mapi elements 
     pst_item_journal       *journal; */
-    pst_item.defineProperty('journal', ref.refType(pst_item_journal));
+    pst_item.defineProperty('journal', pst_item_journal);
     /** calendar mapi elements 
     pst_item_appointment   *appointment; */
-    pst_item.defineProperty('appointment', ref.refType(pst_item_appointment));
+    pst_item.defineProperty('appointment', pst_item_appointment);
     /** mapi element 0x3001 PR_DISPLAY_NAME 
     pst_string  file_as; */
-    pst_item.defineProperty('file_as', ref.refType(pst_string));
+    pst_item.defineProperty('file_as', pst_string);
     /** mapi element 0x3004 PR_COMMENT 
     pst_string  comment; */
-    pst_item.defineProperty('comment', ref.refType(pst_string));
+    pst_item.defineProperty('comment', pst_string);
     /** derived from extra_fields["content-type"] if it contains a charset= subfield  
     pst_string  body_charset; */
-    pst_item.defineProperty('body_charset', ref.refType(pst_string));
+    pst_item.defineProperty('body_charset', pst_string);
     /** mapi element 0x1000 PR_BODY 
     pst_string  body; */
-    pst_item.defineProperty('body', ref.refType(pst_string));
+    pst_item.defineProperty('body', pst_string);
     /** mapi element 0x0037 PR_SUBJECT 
     pst_string  subject; */
-    pst_item.defineProperty('subject', ref.refType(pst_string));
+    pst_item.defineProperty('subject', pst_string);
     /** mapi element 0x8554 PR_OUTLOOK_VERSION 
     pst_string  outlook_version; */
-    pst_item.defineProperty('outlook_version', ref.refType(pst_string));
+    pst_item.defineProperty('outlook_version', pst_string);
     /** mapi element 0x0ff9 PR_RECORD_KEY 
     pst_binary  record_key; */
-    pst_item.defineProperty('record_key', ref.refType(pst_binary));
+    pst_item.defineProperty('record_key', pst_binary);
     /** mapi element 0x65e3 PR_PREDECESSOR_CHANGE_LIST 
     pst_binary  predecessor_change; */
-    pst_item.defineProperty('predecessor_change', ref.refType(pst_binary));
+    pst_item.defineProperty('predecessor_change', pst_binary);
 
 var pstfile_Ptr = ref.refType(pst_file);
 var pstindexll_Ptr = ref.refType(pst_index_ll);
@@ -1157,34 +1157,21 @@ if (libpst) {
 
 		console.log('Loading index...');
 		ret = libpst.pst_load_index(f.ref());
-		console.log('index ret: ', ret);
+		console.log('load index ret: ', ret);
 		ret = null;
 
 		console.log('Loading extended attributes...');
 		ret = libpst.pst_load_extended_attributes(f.ref());
-		console.log('extended ret: ', ret);
+		console.log('load extended ret: ', ret);
 
-		console.log('f: ', f);
-		console.log('i_head: ', ref.isNull(f.i_head));
-		console.log('i_tail: ', ref.isNull(f.i_tail));
-		//var d = ref.readPointer(f.i_tail);
-		console.log(f.i_tail);
-		//console.log('id: ', d.i_id, ' size: ', d.size);
-		console.log('d_head: ', ref.isNull(f.d_head));
-		console.log('d_tail: ', ref.isNull(f.d_tail));
-		console.log('x_head: ', ref.isNull(f.x_head));
-		console.log('block_head: ', ref.isNull(f.block_head));		
-//		var t = f.i_head.deref();  //seems to be returning a null pointer
-//		console.log(t);
-
-/*		ref.writePointer(d_ptr, 0, f.d_head);
+		ref.writePointer(d_ptr, 0, f.d_head);
 		console.log('parsing first item...');
 		item = libpst.pst_parse_item(f.ref(), d_ptr.ref(), null);
 		
 		subject = ref.readPointer(item.subject, 0);
 
 		console.log('email: ', subject);
-*/
+
 	}
 	libpst.pst_close(f.ref());
 }
