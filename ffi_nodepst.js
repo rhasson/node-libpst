@@ -7,7 +7,7 @@ var ref = require('ref');
 var ffi = require('ffi');
 var Struct = require('ref-struct');
 
-var file_name = '/mnt/hgfs/server/outlook.ost';
+var file_name = 'outlook.pst';
 
 /** The string is either utf8 encoded, or it is in the code page
  *  specified by the containing mapi object. It can be forced into
@@ -1135,7 +1135,7 @@ var pstitem_Ptr = ref.refType(pst_item);
 var pststring_Ptr = ref.refType(pst_string);
 var pstbinary_Ptr = ref.refType(pst_binary);
 
-var libpst = new ffi.Library('../libpst.so.1.0.1', {
+var libpst = new ffi.Library('../libpst/lib/libpst.4.dylib', {
 	'pst_open': ['int', [pstfile_Ptr, 'CString', 'CString']],
 	'pst_close': ['int', [pstfile_Ptr]],
 	'pst_load_index': ['int', [pstfile_Ptr]],
